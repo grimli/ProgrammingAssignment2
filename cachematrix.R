@@ -1,11 +1,15 @@
 ## These two functions permit to calculate the inverse of a given 
-## matrix and to cache the result for future use.
+##   matrix and to cache the result for future use.
 ## To use them you have to: 
 ## 1- define a matrix (ei. m1=matrix(c(1,0,0,0,1,0,1,0,1),3,3))
 ## 2- use the function makeCacheMatrix to create a special matrix object (ei. mObj = makeCacheMatrix(m1))
 ## 3- caclulate the inverse matrix (ei. cacheSolve(mObj))
-## the first time that the step 3 is executed the inverce matrix is calculates,
-## the following times the inverse matrix is get from the cache
+## the first time that the step 3 is executed the inverse matrix is calculated,
+## the following times the step 3 is executed the inverse matrix is get from the cache
+
+## NB 
+## 1- no check is done to verify if the input object is of the correct type
+## 2- an unmanaged error is generated when the inverse matrix doesn't exist
 
 ## The makeCacheMatrix function creates a list of functions useful to manage the 
 ## cached value tied to the matrix get in input
